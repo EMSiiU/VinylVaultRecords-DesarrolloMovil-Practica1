@@ -3,7 +3,8 @@ import 'package:practica1/models/vinyl.dart';
 
 class VinylTitle extends StatelessWidget {
   final Vinyl vinyl;
-  const VinylTitle({super.key, required this.vinyl});
+  void Function()? onTap;
+  VinylTitle({super.key, required this.vinyl, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class VinylTitle extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(
               vinyl.description,
-              maxLines: 1,
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(color: Colors.grey[600]),
             ),
@@ -41,9 +42,9 @@ class VinylTitle extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 20, bottom: 20),
+                padding: const EdgeInsets.only(left: 20, bottom: 10),
                 child: SizedBox(
-                  width: 170,
+                  width: 180,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -66,18 +67,21 @@ class VinylTitle extends StatelessWidget {
               ),
 
               //plus button
-              Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(12),
-                    bottomRight: Radius.circular(12),
+              GestureDetector(
+                onTap:  onTap,
+                child: Container(
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12),
+                      bottomRight: Radius.circular(12),
+                    ),
                   ),
-                ),
-                child: Icon(
-                  Icons.add,
-                  color: Colors.white,
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],

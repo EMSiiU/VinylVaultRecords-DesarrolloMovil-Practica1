@@ -15,7 +15,8 @@ class MyBottonNavBar extends StatelessWidget {
         tabActiveBorder: Border.all(color: Colors.white),
         tabBackgroundColor: Colors.grey.shade100,
         mainAxisAlignment: MainAxisAlignment.center,
-        tabBorderRadius: 32,
+        tabBorderRadius: 24,
+        gap: 8,
         onTabChange:(value) =>  onTabChange!(value),
         tabs: [
           GButton(

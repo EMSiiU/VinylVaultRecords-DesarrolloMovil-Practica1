@@ -12,16 +12,19 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
-  //POSIBLE SOLUCIÓN
-  // final List<Vinyl> vinyls = const [
-  //   Vinyl(
-  //     title: 'Random Access Memories',
-  //     artist: 'Daft Punk',
-  //     price: '850',
-  //     imagePath: 'lib/images/daft-punk-random-access-memories-vinyl-2.png',
-  //     description: 'Edicion conmemorativa en doble vinil.',
-  //   ),
-  // ];
+  // add vinyl to cart
+  void addVinylToCart(Vinyl vinyl){
+    Provider.of<Cart>(context, listen: false).addItemToCart(vinyl);
+
+    //alert successfully
+    showDialog(
+      context: context, 
+      builder: (context) => AlertDialog(
+        title: Text('Successfully added!'),
+        content: Text('Check your cart'),
+      )
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -86,8 +89,10 @@ class _ShopPageState extends State<ShopPage> {
               itemBuilder: (context, index) {
                 //get list
                 Vinyl vinyl = value.getVinylList()[index];
+                //return the vinyl
                 return VinylTitle(
                   vinyl: vinyl,
+                  onTap: () => addVinylToCart(vinyl),
                 );
               },
             ),
