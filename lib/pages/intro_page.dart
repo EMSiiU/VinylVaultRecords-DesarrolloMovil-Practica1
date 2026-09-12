@@ -37,7 +37,7 @@ class IntroPage extends StatelessWidget {
 
               //sub title
               Text(
-                'Ediciones especiales y clásicos atemporales en formato analógico de alta fidelidad.',
+                'Special editions and timeless classics in high-fidelity analog format.',
                 style: TextStyle(
                   fontWeight: FontWeight.normal,
                   fontSize: 16,

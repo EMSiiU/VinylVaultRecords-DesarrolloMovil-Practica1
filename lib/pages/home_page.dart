@@ -4,7 +4,7 @@ import 'package:practica1/pages/cart_page.dart';
 import 'package:practica1/pages/shop_page.dart';
 
 class HomePage extends StatefulWidget {
-  const new({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
