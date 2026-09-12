@@ -26,7 +26,14 @@ class _CartItemState extends State<CartItem> {
       ),
       margin: EdgeInsets.only(bottom: 10),
       child: ListTile(
-        leading: Image.asset(widget.vinyl.imagePath),
+        leading: SizedBox(
+          width: 90,
+          height: 60,
+          child: Image.asset(
+            widget.vinyl.imagePath,
+            fit: BoxFit.cover,
+          ),
+        ),
         title: Text(widget.vinyl.title),
         subtitle: Text(widget.vinyl.price),
         trailing: IconButton(

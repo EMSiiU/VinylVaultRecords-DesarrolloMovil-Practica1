@@ -18,11 +18,14 @@ class VinylTitle extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-            child: Image.asset(
-              vinyl.imagePath,
-              height: 160,
-              fit: BoxFit.contain,
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 5),
+            child: SizedBox(
+              width: 210,
+              height: 130,
+              child: Image.asset(
+                vinyl.imagePath,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Padding(
