@@ -67,7 +67,7 @@ class VinylTitle extends StatelessWidget {
 
               //plus button
               Container(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   color: Colors.black,
                   borderRadius: BorderRadius.only(
